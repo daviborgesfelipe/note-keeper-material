@@ -32,6 +32,9 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
+              "bootstrap/scss/boostrap-utilities.scss",
+              "bootstrap/scss/boostrap-grid.scss",
+              "bootstrap/scss/boostrap-reboot.scss",
               "src/styles.scss"
             ],
             "scripts": []
