@@ -5,6 +5,7 @@ import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria
 import { ListarCategoriasComponent } from './listar-categorias/listar-categorias.component';
 import { EditarCategoriasComponent } from './editar-categorias/editar-categorias.component';
 import { CategoriasService } from './services/categoria.service';
+import { ExcluirCategoriasComponent } from './excluir-categorias/excluir-categorias.component';
 
 const formsCaregoriaResolver = (route: ActivatedRouteSnapshot) => {
   const id = parseInt(route.paramMap.get('id')!);
@@ -33,6 +34,11 @@ const routes: Routes = [
   {
     path: 'editar/:id',
     component: EditarCategoriasComponent,
+    resolve: { categoria: formsCaregoriaResolver }
+  },
+  {
+    path: 'excluir/:id',
+    component: ExcluirCategoriasComponent,
     resolve: { categoria: formsCaregoriaResolver }
   }
 
