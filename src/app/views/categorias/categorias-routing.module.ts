@@ -1,8 +1,19 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule, inject } from '@angular/core';
+import { ActivatedRouteSnapshot, RouterModule, Routes } from '@angular/router';
+
 import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria.component';
 import { ListarCategoriasComponent } from './listar-categorias/listar-categorias.component';
 import { EditarCategoriasComponent } from './editar-categorias/editar-categorias.component';
+import { CategoriasService } from './services/categoria.service';
+
+const formsCaregoriaResolver = (route: ActivatedRouteSnapshot) => {
+  const id = parseInt(route.paramMap.get('id')!);
+  return inject(CategoriasService).selecionarPorId(id);
+}
+
+const listarCategoriasResolver = () => {
+  return inject(CategoriasService).selecionarTodos();
+}
 
 const routes: Routes = [
   {
@@ -12,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'listar',
-    component: ListarCategoriasComponent
+    component: ListarCategoriasComponent,
+    resolve: { categorias: listarCategoriasResolver }
   },
   {
     path: 'inserir',
@@ -21,6 +33,7 @@ const routes: Routes = [
   {
     path: 'editar/:id',
     component: EditarCategoriasComponent,
+    resolve: { categoria: formsCaregoriaResolver }
   }
 
 ];

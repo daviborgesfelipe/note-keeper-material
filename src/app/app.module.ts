@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { CoreModule } from './core/core.module';
+import { ToastrModule } from 'ngx-toastr';
+import { provideHttpClient } from '@angular/common/http';
 import { DashboardModule } from './views/dashboard/dashboard.module';
 
 @NgModule({
@@ -17,13 +17,16 @@ import { DashboardModule } from './views/dashboard/dashboard.module';
     AppRoutingModule,
     BrowserAnimationsModule,
 
-    MatButtonModule,
-    MatCardModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-center',
+      preventDuplicates: true
+    }),
 
     CoreModule,
-    DashboardModule,
+    DashboardModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -24,14 +24,8 @@ import { EditarCategoriasComponent } from './editar-categorias/editar-categorias
   imports: [
     CommonModule,
     CategoriasRoutingModule,
-    ReactiveFormsModule,
     SharedModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatCardModule,
-    
+    ReactiveFormsModule,
   ],
   providers: [
     CategoriasService

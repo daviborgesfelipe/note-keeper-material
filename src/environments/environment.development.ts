@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3000',
+  API_URL: 'https://note-keeper-api-52a5.onrender.com/api',
 };

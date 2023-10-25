@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,11 +17,12 @@ import { MatListModule } from '@angular/material/list';
   ],
   imports: [
     CommonModule,
+    SharedModule,
+    RouterModule,
+
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    MatSidenavModule
   ],
   exports: [
     ShellComponent

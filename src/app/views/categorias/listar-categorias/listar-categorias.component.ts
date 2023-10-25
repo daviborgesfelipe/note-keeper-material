@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Observable, map } from 'rxjs';
 import { Categoria } from '../models/forms-categoria.view-model';
-import { CategoriasService } from '../services/categoria.service';
 
 @Component({
   selector: 'app-listar-categorias',
@@ -15,14 +12,13 @@ export class ListarCategoriasComponent {
   categorias$?: Observable<Categoria[]>;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private toastrService: ToastrService,
-    private router: Router, 
-    private servicoCategoria: CategoriasService
+    private route: ActivatedRoute
   ){
   }
 
   ngOnInit(){
-    this.categorias$ = this.servicoCategoria.selecionarTodos();
+    this.categorias$ = this.route.data.pipe(
+      map(dados => dados['categorias'])
+    );
   }
 }
