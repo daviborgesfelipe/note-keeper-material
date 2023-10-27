@@ -14,7 +14,19 @@ export class NotasService {
     return this.http.get<Notas[]>(this.NOTAS_API_URL);
   }
 
+  selecionarPorId(id: number): Observable<Notas> {
+    const url = `${this.NOTAS_API_URL}/${id}`;
+
+    return this.http.get<Notas>(url);
+  }
+
   criar(nota: Notas): Observable<Notas> {
     return this.http.post<Notas>(this.NOTAS_API_URL, nota);
+  }
+
+  editar(id: number, nota: Notas): Observable<Notas> {
+    const url = `${this.NOTAS_API_URL}/${id}`;
+
+    return this.http.put<Notas>(url, nota);
   }
 }

@@ -9,12 +9,14 @@ import { NotasService } from './services/notas.service';
 import { InserirNotasComponent } from './inserir-notas/inserir-notas.component';
 import { RouterModule } from '@angular/router';
 import { CategoriasModule } from '../categorias/categorias.module';
+import { EditarNotasComponent } from './editar-notas/editar-notas.component';
 
 
 @NgModule({
   declarations: [
     ListarNotasComponent,
-    InserirNotasComponent
+    InserirNotasComponent,
+    EditarNotasComponent
   ],
   imports: [
     CommonModule,
