@@ -15,7 +15,7 @@ export class NotasService {
   }
 
   selecionarPorId(id: number): Observable<Notas> {
-    const url = `${this.NOTAS_API_URL}/${id}`;
+    const url = `${this.NOTAS_API_URL}/${id}?_expand=categoria`;
 
     return this.http.get<Notas>(url);
   }
@@ -28,5 +28,10 @@ export class NotasService {
     const url = `${this.NOTAS_API_URL}/${id}`;
 
     return this.http.put<Notas>(url, nota);
+  }
+  excluir(id: number): Observable<any> {
+    const url = `${this.NOTAS_API_URL}/${id}`;
+
+    return this.http.delete<any>(url);
   }
 }

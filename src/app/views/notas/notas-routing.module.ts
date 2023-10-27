@@ -5,6 +5,7 @@ import { NotasService } from './services/notas.service';
 import { InserirNotasComponent } from './inserir-notas/inserir-notas.component';
 import { listarCategoriasResolver } from '../categorias/services/listar-categorias.resolver';
 import { EditarNotasComponent } from './editar-notas/editar-notas.component';
+import { ExcluirNotasComponent } from './excluir-notas/excluir-notas.component';
 
 const listarNotasResolver = () => {
   return inject(NotasService).selecionarTodos();
@@ -36,6 +37,11 @@ const routes: Routes = [
     path: 'editar/:id',
     component: EditarNotasComponent,
     resolve: { nota: formsNotaResolver, categorias: listarCategoriasResolver },
+  },
+  {
+    path: 'excluir/:id',
+    component: ExcluirNotasComponent,
+    resolve: { nota: formsNotaResolver },
   },
 ];
 

@@ -10,13 +10,15 @@ import { InserirNotasComponent } from './inserir-notas/inserir-notas.component';
 import { RouterModule } from '@angular/router';
 import { CategoriasModule } from '../categorias/categorias.module';
 import { EditarNotasComponent } from './editar-notas/editar-notas.component';
+import { ExcluirNotasComponent } from './excluir-notas/excluir-notas.component';
 
 
 @NgModule({
   declarations: [
     ListarNotasComponent,
     InserirNotasComponent,
-    EditarNotasComponent
+    EditarNotasComponent,
+    ExcluirNotasComponent
   ],
   imports: [
     CommonModule,
