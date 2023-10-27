@@ -6,14 +6,11 @@ import { ListarCategoriasComponent } from './listar-categorias/listar-categorias
 import { EditarCategoriasComponent } from './editar-categorias/editar-categorias.component';
 import { CategoriasService } from './services/categoria.service';
 import { ExcluirCategoriasComponent } from './excluir-categorias/excluir-categorias.component';
+import { listarCategoriasResolver } from './services/listar-categorias.resolver';
 
 const formsCaregoriaResolver = (route: ActivatedRouteSnapshot) => {
   const id = parseInt(route.paramMap.get('id')!);
   return inject(CategoriasService).selecionarPorId(id);
-}
-
-const listarCategoriasResolver = () => {
-  return inject(CategoriasService).selecionarTodos();
 }
 
 const routes: Routes = [
