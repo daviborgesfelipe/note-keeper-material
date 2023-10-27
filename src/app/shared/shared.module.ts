@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -23,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
+    MatChipsModule,
   ],
   exports: [
     CardHoverDirective,
@@ -34,6 +35,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
+    MatChipsModule,
   ],
 })
 export class SharedModule { }
