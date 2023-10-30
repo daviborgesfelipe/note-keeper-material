@@ -1,5 +1,5 @@
-<div class="row justify-content-center">
-  <div class="col-md-11 d-grid gap-3 ps-0">
+<div class="row justify-content-center w-100">
+  <div class="col-md-10 col-xxl-11 d-grid gap-3 ps-4">
     <h1 class="fs-2">Listar Notas</h1>
 
     <button
@@ -12,11 +12,11 @@
       Nova Nota
     </button>
 
-    <div class="row gap-3">
+    <div class="row gap-3 w-100">
       <mat-card
         *ngFor="let nota of notas$ | async"
         appCardHover
-        class="col-12 col-md-6 col-lg-4 col-xxl-3"
+        class="col-12 col-md-8 col-lg-5 col-xxl-3"
       >
         <mat-card-header>
           <mat-card-title>
